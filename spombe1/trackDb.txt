@@ -1,0 +1,238 @@
+track ori_eff 
+type bigWig
+shortLabel Origin eff (%)
+longLabel Percentage replication origin efficiency (Daigaku et al., 2015)
+bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSE62108_origin-effici.bw
+
+
+track Watson_bins 
+container multiWig
+aggregate solidOverlay
+showSubtrackColorOnUi on
+type bigWig 0 1000
+shortLabel Watson read count
+longLabel Total read counts on Watson strand (Daigaku et al., 2015)
+graphTypeDefault point
+gridDefault off
+alwaysZero on
+
+	track  delta_watson_bins
+	parent Watson_bins
+	color 0,0,255
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519715_bin-count_delta_watson.bw
+	shortLabel Delta Watson reads
+	longLabel Bin counts for pol-delta wild-type data (Watson strand) from Daigaku et al (2015).
+	type bigWig
+	autoScale on
+
+	track  epsilon_watson_bins
+	parent Watson_bins
+	color 255,0,0
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519714_bin-count_epsilon_watson.bw
+	shortLabel Delta Watson reads
+	longLabel Bin counts for pol-epsilon wild-type data (Watson strand) from Daigaku et al (2015).
+	type bigWig
+	autoScale on
+
+track Watson_smoothed_ratio 
+container multiWig
+aggregate solidOverlay
+showSubtrackColorOnUi on
+type bigWig 0 1000
+shortLabel Watson smoothed read ratio
+longLabel Smoothed ratio of reads on Watson strand (Daigaku et al., 2015)
+graphTypeDefault point
+gridDefault off
+alwaysZero on
+yLineOnOff on
+yLineMark 0.5
+
+	track  delta_watson_ratio
+	parent Watson_smoothed_ratio
+	color 0,0,255
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519715_Pol-usage_delta_watson_smoothed.bw
+	shortLabel Delta Watson ratio
+	longLabel Smoothed ratio of reads for pol-delta wild-type data (Watson strand) from Daigaku et al (2015).
+	type bigWig
+	autoScale on
+
+	track  epsilon_watson_ratio
+	parent Watson_smoothed_ratio
+	color 255,0,0
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519714_Pol-usage_epsilon_watson_smoothed.bw
+	shortLabel Epsilon Watson ratio
+	longLabel Smoothed ratio of reads for pol-epsilon wild-type data (Watson strand) from Daigaku et al (2015).
+	type bigWig
+	autoScale on
+
+track Crick_smoothed_ratio 
+container multiWig
+aggregate solidOverlay
+showSubtrackColorOnUi on
+type bigWig 0 1000
+shortLabel Crick smoothed read ratio
+longLabel Smoothed ratio of reads on Crick strand (Daigaku et al., 2015)
+graphTypeDefault point
+gridDefault off
+alwaysZero on
+yLineOnOff on
+yLineMark 0.5
+
+	track  delta_crick_ratio
+	parent Crick_smoothed_ratio
+	color 0,0,255
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519715_Pol-usage_delta_crick_smoothed.bw
+	shortLabel Delta Crick ratio
+	longLabel Smoothed ratio of reads for pol-delta wild-type data (Crick strand) from Daigaku et al (2015).
+	type bigWig
+	autoScale on
+
+	track  epsilon_crick_ratio
+	parent Crick_smoothed_ratio
+	color 255,0,0
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519714_Pol-usage_epsilon_crick_smoothed.bw
+	shortLabel Epsilon Crick ratio
+	longLabel Smoothed ratio of reads for pol-epsilon wild-type data (Crick strand) from Daigaku et al (2015).
+	type bigWig
+	autoScale on
+
+track Crick_bins 
+container multiWig
+aggregate solidOverlay
+showSubtrackColorOnUi on
+type bigWig 0 1000
+shortLabel Crick read count
+longLabel Total read counts on Crick strand (Daigaku et al., 2015)
+graphTypeDefault point
+gridDefault off
+
+	track  epsilon_crick_bins
+	parent Crick_bins
+	color 255,0,0
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519714_bin-count_epsilon_crick.bw
+	shortLabel Epsilon Crick reads
+	longLabel Bin counts for pol-epsilon wild-type data (Crick strand) from Daigaku et al (2015).
+	type bigWig
+	autoScale on
+	alwaysZero on
+	
+	track  delta_crick_bins
+	parent Crick_bins
+	color 0,0,255
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519715_bin-count_delta_crick.bw
+	shortLabel Delta Crick reads
+	longLabel Bin counts for pol-delta wild-type data (Crick strand) from Daigaku et al (2015).
+	type bigWig
+	autoScale on
+	alwaysZero on
+
+track repli_left_forks 
+graphTypeDefault point
+gridDefault off
+color 0,0,0
+viewLimits 0.0:1.0
+bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSE62108_PU-seq_leftward_moving_fork.bw
+shortLabel PU-seq left forks 
+longLabel Leftward forks derived from polymerase-usage sequencing.
+type bigWig 0 1
+yLineOnOff on
+yLineMark 0.5
+
+track Trep_data 
+container multiWig
+aggregate solidOverlay
+showSubtrackColorOnUi on
+type bigWig 0 1000
+shortLabel Trep
+longLabel Trep data from wild-type data from Daigaku et al (2015)
+graphTypeDefault point
+gridDefault off
+
+	track  Trep_PU-seq
+	parent Trep_data
+	color 0,0,0
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSE62108_PU-seq_Trep.bw
+	shortLabel PU-seq Trep 
+	longLabel Trep derived from polymerase-usage sequencing.
+	type bigWig
+	negateValues on
+
+	track  Trep_timecourse
+	parent Trep_data
+	color 128,0,0
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519716_rep_timing_Trep.bw
+	shortLabel Timecourse Trep 
+	longLabel Trep derived from timecourse (elutriation).
+	type bigWig
+	negateValues on
+
+track Daigaku_timecourse
+container multiWig
+aggregate solidOverlay
+showSubtrackColorOnUi on
+type bigWig 0 1000
+shortLabel Replication timecourse
+longLabel Daigaku et al. (2015): S. pombe genome replication timecouse from elutriation
+viewLimits 0.9:2.1
+graphTypeDefault bar
+yLineOnOff on
+yLineMark 1.0
+gridDefault off 
+maxHeighPixels 100:32:8
+
+	track  Daigaku75
+	parent Daigaku_timecourse
+	color 0,0,0
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519723_rep_timing_75min.bw
+	shortLabel 1 75 min 
+	longLabel Daigaku et al. (2015): Timecouse 75 min post elutriation.
+	type bigWig
+
+	track  Daigaku45
+	parent Daigaku_timecourse
+	color 180,180,180
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519722_rep_timing_45min.bw
+	shortLabel 2 45 min 
+	longLabel Daigaku et al. (2015): Timecouse 45 min post elutriation.
+	type bigWig
+	
+	track  Daigaku35
+	parent Daigaku_timecourse
+	color 200,0,200
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519721_rep_timing_35min.bw
+	shortLabel 3 35 min 
+	longLabel Daigaku et al. (2015): Timecouse 35 min post elutriation.
+	type bigWig
+
+	track  Daigaku30
+	parent Daigaku_timecourse
+	color 100,182,238
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519720_rep_timing_30min.bw
+	shortLabel 4 30 min 
+	longLabel Daigaku et al. (2015): Timecouse 30 min post elutriation.
+	type bigWig
+
+	track  Daigaku25
+	parent Daigaku_timecourse
+	color 220,100,100
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519719_rep_timing_25min.bw
+	shortLabel 5 25 min 
+	longLabel Daigaku et al. (2015): Timecouse 25 min post elutriation.
+	type bigWig
+
+	track  Daigaku15
+	parent Daigaku_timecourse
+	color 255,255,0
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519718_rep_timing_15min.bw
+	shortLabel 6  15 min
+	longLabel Daigaku et al. (2015): Timecouse 15 min post elutriation.
+	type bigWig
+	
+	track  Daigaku5
+	parent Daigaku_timecourse
+	color 0,180,0	
+	bigDataUrl http://users.ox.ac.uk/~path0915/UCSChub/spombe1/GSM1519717_rep_timing_5min.bw
+	shortLabel 7 5 min
+	longLabel Daigaku et al. (2015): Timecouse 5 min post elutriation.
+	type bigWig
+
